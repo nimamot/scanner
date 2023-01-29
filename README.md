@@ -1,55 +1,44 @@
 # Port Scanner
 
-This program is a simple implementation of a port scanner that can scan for open ports on a target host.
+This is a simple Python script that scans for open ports on a specified target.
 
 ## Getting Started
 
-The program takes one argument, the target hostname or IP address. The port range to be scanned can be specified by the user through the program's interface.
+These instructions will get you a copy of the project up and running on your local machine.
 
-```python
-import sys
-import socket
-from datetime import datetime
+### Prerequisites
 
-# Define the target
-if len(sys.argv) == 2 :
-    target = socket.gethostbyname(sys.argv[1]) # Translate hostname to IPv4
-else:
-    print("Invalid amount of arguments.")
-    print("Syntax: python3 scanner.py [hostname/IP]")
+You need to have Python 3 installed on your machine.
 
-# Add a banner
-print("-"*50)
-print("Scanning target " + target)
-print("Time started: " + str(datetime.now()))
-print("-"*50)
+### Installing
 
-# Specify the port range
-print("Please specify the port range")
-start = int(input("The scan starts at Port: "))
-end = int(input("The scan ends at Port: "))
+Clone or download the repository to your local machine.
 
-try:
-    for port in range(start, end):
-        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        socket.setdefaulttimeout(1)
-        result = s.connect_ex((target,port)) # Returns an error indicator
-        print("Checking port {}".format(port))
-        if result == 0:
-            print("Port {} is open".format(port))
-        else:
-            toPrint = ("Port {} is not open".format(port))
-        print(toPrint)
-        s.close()
+### Running the script
 
-except KeyboardInterrupt:
-    print("\nExiting program.")
-    sys.exit()
+Open your terminal and navigate to the project directory.
 
-except socket.gaierror:
-    print("Hostname could not be resolved.")
-    sys.exit()
+Run the following command:
 
-except socket.error:
-    print("Could not connect to the server.")
-    sys.exit()
+
+Replace `[target]` with the target hostname or IP address you wish to scan.
+
+## Usage
+
+When you run the script, it will ask you to specify the port range you want to scan.
+Enter the starting and ending port numbers.
+
+The script will then scan the specified range of ports and print the results in the terminal.
+
+## Built With
+
+- Python 3
+- socket module
+
+## Author
+
+[Your Name]
+
+## License
+
+This project is licensed under the [License name]. See the [LICENSE.md](LICENSE.md) file for details.
