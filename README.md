@@ -34,11 +34,3 @@ The script will then scan the specified range of ports and print the results in 
 
 - Python 3
 - socket module
-
-## Author
-
-[Your Name]
-
-## License
-
-This project is licensed under the [License name]. See the [LICENSE.md](LICENSE.md) file for details.
