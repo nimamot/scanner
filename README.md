@@ -19,7 +19,7 @@ Clone or download the repository to your local machine.
 Open your terminal and navigate to the project directory.
 
 Run the following command:
-
+python3 scanner.py [target]
 
 Replace `[target]` with the target hostname or IP address you wish to scan.
 
